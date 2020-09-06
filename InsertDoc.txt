@@ -1,0 +1,40 @@
+To insert one document, use insertOne()
+
+> db.studentsdoc.insertOne({'id':001, 'name':'sana'})
+
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("5f549456051ee6d48ce22f9a")
+}
+
+Now you can see your database as it contains a document.
+> show dbs
+admin       0.000GB
+config      0.000GB
+local       0.000GB
+mystudents  0.000GB
+
+To insert many documents at a time, use insertMany()
+
+> db.studentsdoc.insertMany([{'id':002, 'name':'raj'},{'id':003,'name':'sadah'},{'id':004,'name':'henry'}])
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("5f5496ba33dee65fb513495c"),
+		ObjectId("5f5496ba33dee65fb513495d"),
+		ObjectId("5f5496ba33dee65fb513495e")
+	]
+}
+
+> exit
+bye
+
+We are going to import a csv to easily add documents to the database.
+
+Imagine you have stud.csv database,
+
+~$ mongoimport --type csv -d mystudents -c studentsdoc --headerline --drop stud.csv
+
+2020-09-06T08:05:05.377+0000	connected to: localhost
+2020-09-06T08:05:05.379+0000	dropping: mystudents.studentsdoc
+2020-09-06T08:05:05.401+0000	imported 262 documents
