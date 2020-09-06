@@ -1,4 +1,4 @@
-# MongoDB_NoSql-Basics
+# MongoDB NoSql CRUD Operations
 
 - Install MongoDB.
 - Create a database.
