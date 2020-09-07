@@ -1,1 +1,25 @@
+To retrieve one document from the collection studentsdoc,
+
+>db.studentsdoc.findOne()
+
+To retrieve specifiv document,
+
+>db.studentsdoc.find({'id':002})
+
+To retrieve all documents from the collection studentsdoc,
+
+>db.studentsdoc.find({})
+
+We can use operators in querying documents,
+
+>db.studentsdoc.find( { 'name': { $gt: 'H' } } )  # Returns the documents of students whose names start letters greater than S.
+
+Refer: https://docs.mongodb.com/manual/reference/operator/query/
+
+NOTE: While querying documents, watch the case-sensitivity.
+
+You can do exclusion from all documents in a collection, 
+
+> db.studentsdoc.find( {},{ 'id': 0 })
+Output: you'll only retrieve all the names of students in the collection.
 
