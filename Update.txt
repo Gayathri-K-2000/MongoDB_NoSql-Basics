@@ -1,0 +1,31 @@
+There are three methods:
+
+db.collection.updateOne(<filter>, <update>, <options>)
+db.collection.updateMany(<filter>, <update>, <options>)
+db.collection.replaceOne(<filter>, <update>, <options>)
+
+Refer: https://docs.mongodb.com/manual/tutorial/update-documents/
+
+> db.studentsdoc.updateOne(
+   { 'id': 003 },
+   {
+     $set: { "name": "hary"}
+   }
+)
+
+This updates the name of student having id=003
+
+> db.studentsdoc.updateMany(   
+   { "qty": { $lt: 50 } },
+   {
+     $set: { 'status': "P" }
+   }
+)   
+
+> db.studentsdoc.updateMany(
+   { },
+   {
+     $set: { "last_updated ": new ISODate()}
+   }
+)
+
